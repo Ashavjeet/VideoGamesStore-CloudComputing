@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="text-center">
+    <h5> This admin feature is not fully implemented as we were focussed on accounts linked with the database but still few google authentication steps are working.</h5>
+</div>
+
+<head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="572148227045-7tgqrl4v9kl6kl9g4347kg6tci9t6vl1.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+
+<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+<script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            alert("Successful");
+            console.log("ID: " + profile.getId());
+            console.log('Full Name: ' + profile.getName());
+            console.log('Given Name: ' + profile.getGivenName());
+            console.log('Family Name: ' + profile.getFamilyName());
+            console.log("Image URL: " + profile.getImageUrl());
+            console.log("Email: " + profile.getEmail());
+            var id_token = googleUser.getAuthResponse().id_token;
+            console.log("ID Token: " + id_token);
+        }
+</script>
+
+
+
+
+<div class="text-center">
+    <marquee width="900">THIS IS A STUDENT PROJECT.</marquee>
+</div>

@@ -1,0 +1,77 @@
+﻿@model GameStoreT2.Models.DB.VidG
+
+@{
+    ViewData["Title"] = "Search Record";
+}
+
+<h1>SearchRec</h1>
+@*Ashav- This view follows formation of index class of VidG*@
+
+<hr />
+<div class="row">
+    <div class="col-md-5">
+        <form asp-action="SearchRec">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="VideoGameName" class="control-label"></label>
+                <input name="Vidgame" required="required" />
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+@*Ashav-back button*@
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@if (ViewBag.temp != null)
+{
+    <div>
+        @*Ashav- this one was tough to figure out but finally achieved, based on Index of VidGs*@
+        <div class="row">
+            <div class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VidKey)
+            </div>
+            <div class="col-sm-10">
+                @Html.DisplayFor(model => model.VidKey)
+            </div>
+            <div class="col-sm-2">
+                @Html.DisplayNameFor(model => model.VideoGameName)
+            </div>
+            <div class="col-sm-10">
+                @Html.DisplayFor(model => model.VideoGameName)
+            </div>
+            <div class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ratings)
+            </div>
+            <div class="col-sm-10">
+                @Html.DisplayFor(model => model.Ratings)
+            </div>
+            <div class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Developer)
+            </div>
+            <div class="col-sm-10">
+                @Html.DisplayFor(model => model.Developer)
+            </div>
+            <div class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </div>
+            <div class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </div>
+        </div>
+    </div>
+}
+
+else
+{
+
+    <h5></h5>
+
+
+}

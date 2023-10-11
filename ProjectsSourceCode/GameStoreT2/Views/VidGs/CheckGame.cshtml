@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewData["Title"] = "CheckGame";
+}
+
+
+
+<div style="margin-top:200px"; class="text-center">
+    <h6 >Click on the button below to check if a new game has been added.</h6>
+</div>
+
+<form style="padding-left:500px"; asp-controller="VidGs" asp-action="checkNew" method="post"> @*On click this button calls method checkNew definded in vidcontroller which is linked to database*@
+    <input type="submit" class="btn btn-primary" value="Check for new game" />
+</form>
